@@ -1,0 +1,153 @@
+/* Reset some default styles */
+body, h1, p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container for the chat interface */
+.chat-container {
+  display: flex;
+  max-width: 600px;
+  margin: 2rem auto; /* Reduce the margin */
+  padding: 0;
+  border: 1px solid #ddd;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  flex-direction: column;
+  height: 500px;
+}
+
+
+.message-list {
+  flex-grow: 1; /* Allow the message list to grow within the container */
+  overflow: auto; /* Add a vertical scroll bar when content exceeds the container height */
+  max-height: calc(100% - 35px); /* Set a max height */
+  padding-top: 37px; /* Add padding at the top for title bar */
+  display: block;
+  flex-direction: column;
+  justify-content: flex-end; /* Messages stack from bottom */
+}
+
+
+/* Styling for individual messages */
+.message {
+  list-style-type: none;
+  border-radius: 10px;
+  margin: 10px 0 1rem 1rem;
+  padding: 10px 15px; /* Adjust padding */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 50%; /* Adjust the width */
+}
+
+/* Style for the message user */
+.message-user {
+  font-size: 20px;
+  color: black;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+/* Style for the message text */
+.message-text {
+  font-size: 16px;
+  margin-left: 0; /* Add left margin to messages */
+  word-wrap: break-word; /* Ensure long words wrap within the container */
+}
+
+/* Style for the message timestamp */
+.message-timestamp {
+  font-size: 12px;
+  color: #888;
+  margin-left: 5px;
+}
+
+/* Input area for typing messages */
+.input-area {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-top: 1px solid #ddd;
+  padding: 15px;
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Text input field */
+.input-field {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: #f9f9f9;
+  border-radius: 25px;
+  margin-right: 10px;
+}
+
+/* Send button */
+.send-button {
+  background-color: #007aff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+/* Title bar styling */
+.title-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  background: #2f283b;
+  border-radius: 10px 10px 0 0; /* Adjust rounded corners */
+  padding: 9px;
+}
+
+.title-bar-button {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.red {
+  background-color: #ff605c;
+}
+
+.yellow {
+  background-color: #ffbd44;
+}
+
+.green {
+  background-color: #00ca4e;
+}
+
+/* Hide the default scrollbar */
+.message-list::-webkit-scrollbar {
+  width: 0.5rem; /* Set the width of the scrollbar */
+  background-color: transparent; /* Set background color behind scrollbar */
+}
+
+/* Track style */
+.message-list::-webkit-scrollbar-track {
+  background-color: transparent; /* Set the color of the track */
+}
+
+/* Handle style */
+.message-list::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2); /* Set the color of the handle */
+  border-radius: 0.5rem; /* Round the edges of the handle */
+}
+
+/* On hover, make the handle darker */
+.message-list::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Button style at the top and bottom of the scrollbar */
+.message-list::-webkit-scrollbar-button {
+  display: none; /* Hide the buttons */
+}

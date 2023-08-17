@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    
+  body
+    .chat-container
+      .title-bar
+        span.red.title-bar-button
+        span.yellow.title-bar-button
+        span.green.title-bar-button
+      ul.message-list
+        each message in messages
+          span.message-user= message.user
+          li.message
+            span.message-text= message.text
+            span.message-timestamp= message.added
+      .input-area
+        form(action='/addMessage', method='post')
+          input.input-field(type='text', name='user', placeholder='Username', required)
+          input.input-field(type='text', name='text', placeholder='Type your message...', required)
+          input(type='hidden', name='added', value=new Date())
+          button.send-button(type='submit') Send
